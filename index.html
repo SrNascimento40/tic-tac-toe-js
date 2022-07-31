@@ -8,9 +8,9 @@
     <title>Tic-tac-toe</title>
 </head>
 <body>
-    <div class="board x">
-        <div class="cell x" data-cell></div>
-        <div class="cell o" data-cell></div>
+    <div class="board x" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
@@ -20,7 +20,8 @@
         <div class="cell" data-cell></div>
     </div>
     <div class="winningMessage">
-        <p>Venceu!</p>
+        <p class="winningMessageText">Win!</p>
+        <button class="winningMessageButton">Rematch!</button>
     </div>
     <script src="./scripts.js"></script>
 </body>

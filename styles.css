@@ -54,38 +54,45 @@ body {
     border-bottom:none;
 }
 
-.cell.x::before,
-.cell.x::after,
-.board.x .cell:hover::after,
-.board.x .cell:hover::before {
-    content:"";
-    height: calc(100px * 0.12);
-    width: calc(100px * 0.88);
-    background: rgb(235, 235, 235);
-    position: absolute;
-    border: rgb(255, 255, 255) solid 1px;
+.board.x .cell:not(.x):not(.o):hover::after,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before {
+        background: rgba(216, 238, 255, 0.4) !important;
 }
 
 .cell.x::before,
-.board.x .cell:hover::before {
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after,
+.board.x .cell:not(.x):not(.o):hover::before {
+    content:"";
+    height: calc(100px * 0.12);
+    width: calc(100px * 0.88);
+    background: rgb(255, 255, 255);
+    position: absolute;
+    border: rgba(240, 240, 240, 0.95) solid 1px;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before {
     transform: rotate(45deg);
 }
 .cell.x::after,
-.board.x .cell:hover::after {
+.board.x .cell:not(.x):not(.o):hover::after {
     transform: rotate(-45deg);
 }
 
 .cell.o::before,
 .cell.o::after,
-.board.o .cell:hover::after,
-.board.o .cell:hover::before  {
+.board.o .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before  {
     content:"";
     height: calc(100px * 0.88);
     width: calc(100px * 0.88);
-    background: rgb(235, 235, 235);
+    background: rgb(255, 255, 255);
     position: absolute;
     border-radius: 100%;
-    border: rgb(255, 255, 255) solid 1px;
+    border: rgba(240, 240, 240, 0.95) solid 1px;
 }
 
 .cell.x, .cell.o {
@@ -94,4 +101,35 @@ body {
 
 .winningMessage {
     display: none;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* isso faz ficar em cima de todos os elementos e ocupar toda largura e largura*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+}
+
+.winningMessageButton {
+    font-size: 2.5rem;
+    background-color: rgba(65, 185, 135, 1);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    color: white;
+}
+
+.winningMessageButton:hover{
+    color: rgba(65, 185, 135, 1);
+    background-color: rgba(240, 240, 240, 0.95);
+}
+
+.winningMessageText {
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
 }
