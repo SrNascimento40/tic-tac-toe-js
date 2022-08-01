@@ -133,3 +133,7 @@ body {
     color: rgb(255, 255, 255);
     font-size: 5rem;
 }
+
+.show-winning-message {
+    display: flex;
+}
